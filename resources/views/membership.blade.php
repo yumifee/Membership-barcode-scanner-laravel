@@ -1,3 +1,5 @@
+<!-- use \Milon\Barcode\DNS1D; -->
+
 <style>
 .hide-modal
 {
@@ -144,7 +146,9 @@
                                                                         </h3>
                                                                         <div class="mt-2">
                                                                             <p class="text-sm text-gray-500">
-                                                                                <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($membership->scan_id, 'C39')}}" alt="barcode" />
+                                                                                <img src="{{ 'data:image/png' . base64_encode(DNS1D::getBarcodePNG($membership->scan_id, 'C39')) }}" alt="barcode" />
+                                                                                <!-- <img src="data:image/png,{{DNS1D::getBarcodePNG($membership->scan_id, 'C39')}}" alt="barcode" /> -->
+                                                                                <!-- <img src="data:image/png;base64,'. DNS1D::getBarcodePNG($membership->scan_id, 'C39+').'" alt="barcode" /> -->
                                                                             </p>
                                                                         </div>
                                                                     </div>

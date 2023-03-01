@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Route::get('barcode', 'BarcodeController@barcode');
 
-// Route::get('/scan_result/{id}', 'App\Http\Controllers\BarcodeController@scan');
+Route::get('/scan_result/{id}', 'App\Http\Controllers\BarcodeController@scan');
 
-// Route::get('/membership', 'App\Http\Controllers\MembershipController@show');
+Route::get('/membership', 'App\Http\Controllers\MembershipController@show');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
